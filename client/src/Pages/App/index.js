@@ -23,6 +23,7 @@ function App({ action, loadingPage, response, getMetaData }) {
     <Router>
       <Header />
       <Layout>
+        asdasd
         {action.needed ? <Popup {...action} /> : null}
         {loadingPage ? <LoadingPage /> : null}
         {response.code ? <InfoBar items={[response.status]} classes={sty.sidePage} /> : null}
