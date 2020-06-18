@@ -7,12 +7,16 @@
     "client:dev": "cd client && yarn && yarn build",
     "client:clean": "rm -rf build && mkdir build",
     "start": "yarn server:build  && node ./build/index.js",
-    "dev": "yarn server && yarn client:dev && node ./build/index.js",
+    "dev": "yarn server && yarn client:dev && nodemon ./build/index.js",
     "heroku-postbuild": "yarn client:build"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "express": "^4.17.1",
-    "babel-cli": "^6.26.0"
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
   }
 }

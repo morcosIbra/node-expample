@@ -1,10 +1,13 @@
 import express from 'express';
 import path from 'path';
+require('dotenv').config();
 const app = express();
 app.use(express.static(path.join(__dirname, '/../client/build')));
 
-app.get('/', async (req, res) => {
-    const msg = await `Welcome to Node.js & `;
+app.get('/api', async (req, res) => {
+    const msg = await process.env.HOST;
+    console.log(process.env.HOST);
+
     res.status(200).json({ message: msg });
 });
 app.get('/*', (req, res) => {
