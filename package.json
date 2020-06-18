@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "server:dev": "babel-node ./src/index.js",
+    "clean": "rm -rf build && mkdir build",
+    "server:build": "babel -d ./build ./src -s",
+    "build": "yarn clean && yarn server:build",
+    "start": "yarn build && node ./build/index.js"
+  },
+  "dependencies": {
+    "babel-preset-env": "^1.7.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  }
+}
