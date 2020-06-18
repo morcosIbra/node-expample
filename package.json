@@ -4,7 +4,7 @@
     "server:build": "yarn clean && yarn server",
     "server": "babel -d ./build ./src -s",
     "client:build": "cd client && yarn && yarn build",
-    "start": "yarn server:build && yarn client:build && node ./build/index.js",
+    "start": "yarn server:build && node ./build/index.js",
     "dev": "yarn server && yarn client:build && node ./build/index.js"
   },
   "dependencies": {
