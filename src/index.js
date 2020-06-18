@@ -31,8 +31,7 @@ app.get('/*', (req, res) => {
     // res.send('success booking church')
 });
 const connectDb = () => {
-    return mongoose.connect(process.env.MONGOLAB_URI ||
-        process.env.MONGOHQ_URL || process.env.DATABASE, {
+    return mongoose.connect(process.env.MONGODB_URI || process.env.DATABASE, {
         useNewUrlParser: true,
         useCreateIndex: true,
         useFindAndModify: false,
