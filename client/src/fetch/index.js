@@ -1,7 +1,7 @@
 import axios from 'axios';
 let baseURL = ''
 if (process.env.NODE_ENV == 'production')
-    baseURL = `https://whispering-sands-61340.herokuapp.com/`;
+    baseURL = `https://node-exapmle.herokuapp.com/`;
 else
     baseURL = `http://localhost:3000/`;
 export const axiosMessenger = axios.create({
