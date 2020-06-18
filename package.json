@@ -5,7 +5,7 @@
     "server": "babel -d ./build ./src -s",
     "client:build": "cd client && yarn && yarn build",
     "start": "yarn server:build && node ./build/index.js",
-    "dev": "yarn server && yarn client:build && node ./build/index.js"
+    "dev": "yarn server:build && yarn client:build && node ./build/index.js"
   },
   "dependencies": {
     "babel-preset-env": "^1.7.0",
