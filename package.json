@@ -1,11 +1,13 @@
 {
   "scripts": {
-    "clean": "rm -rf build && mkdir build",
-    "server:build": "yarn clean && yarn server",
+    "server:clean": "rm -rf build && mkdir build",
+    "server:build": "yarn server:clean && yarn server",
     "server": "babel -d ./build ./src -s",
-    "client:build": "cd client && yarn && yarn build",
-    "start": "yarn server:build && node ./build/index.js",
-    "dev": "yarn server:build && yarn client:build && node ./build/index.js"
+    "client:build": "cd client && yarn && yarn client:clean && yarn build",
+    "client:dev": "cd client && yarn && yarn build",
+    "client:clean": "rm -rf build && mkdir build",
+    "start": "yarn server:build && yarn client:build && node ./build/index.js",
+    "dev": "yarn server && yarn client:dev && node ./build/index.js"
   },
   "dependencies": {
     "babel-preset-env": "^1.7.0",
