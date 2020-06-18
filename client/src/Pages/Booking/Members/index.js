@@ -9,12 +9,19 @@ import InfoBar from '../../../Components/InfoBar';
 import Footer from '../../../Components/Footer';
 import { membersValidation } from '../../../utilies/memberForm';
 import { bookCeremony } from '../../../utilies/constants';
+import { axiosMessenger } from '../../../fetch';
 
 const Members = ({ info, validationMsgs, order, redirectTo, getEvents, setBooking }) => {
     const history = useHistory();
     const refForm = useRef();
     const refMembers = useRef();
+    useEffect(() => {
+        axiosMessenger.get('/api').then(res => {
+            info = res.data
+            console.log(res);
 
+        })
+    }, [])
     useEffect(() => {
         if (redirectTo === 'events')
             history.push(`/booking/${redirectTo}`)
