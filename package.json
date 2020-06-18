@@ -3,7 +3,7 @@
     "server:clean": "rm -rf build && mkdir build",
     "server:build": "yarn server:clean && yarn server",
     "server": "babel -d ./build ./src -s",
-    "client:build": "cd client && yarn && yarn client:clean && yarn build",
+    "client:build": "cd client && yarn  && yarn build",
     "client:dev": "cd client && yarn && yarn build",
     "client:clean": "rm -rf build && mkdir build",
     "start": "yarn server:build  && node ./build/index.js",
