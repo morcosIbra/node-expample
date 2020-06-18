@@ -4,7 +4,8 @@
     "clean": "rm -rf build && mkdir build",
     "server:build": "babel -d ./build ./src -s",
     "build": "yarn clean && yarn server:build",
-    "start": "yarn build && node ./build/index.js"
+    "start": "yarn build && yarn client:build && node ./build/index.js",
+    "client:build": "cd client && yarn && yarn build"
   },
   "dependencies": {
     "babel-preset-env": "^1.7.0",
