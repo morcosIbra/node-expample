@@ -1,11 +1,11 @@
 {
   "scripts": {
-    "server:dev": "babel-node ./src/index.js",
     "clean": "rm -rf build && mkdir build",
-    "server:build": "babel -d ./build ./src -s",
-    "build": "yarn clean && yarn server:build",
-    "start": "yarn build && yarn client:build && node ./build/index.js",
-    "client:build": "cd client && yarn && yarn build"
+    "server:build": "yarn clean && yarn server",
+    "server": "babel -d ./build ./src -s",
+    "client:build": "cd client && yarn && yarn build",
+    "start": "yarn server:build && yarn client:build && node ./build/index.js",
+    "dev": "yarn server && yarn client:build && node ./build/index.js"
   },
   "dependencies": {
     "babel-preset-env": "^1.7.0",
